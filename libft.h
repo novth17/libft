@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:08:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/03 17:46:36 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:56:00 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-
+char *ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c);
 
 #endif

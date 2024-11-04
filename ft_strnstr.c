@@ -6,12 +6,11 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/01 17:39:16 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:30:13 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
