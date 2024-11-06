@@ -5,19 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/04 20:01:36 by hiennguy         ###   ########.fr       */
+/*   Created: 2024/11/06 14:53:34 by hiennguy          #+#    #+#             */
+/*   Updated: 2024/11/06 14:55:19 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
-	int in_word = 0;
-	int count = 0;
-	
+	int	in_word;
+	int	count;
+
+	in_word = 0;
+	count = 0;
 	while (*s != '\0')
 	{
 		if (*s != c)
@@ -25,7 +26,7 @@ static int count_words(const char *s, char c)
 			if (in_word == 0)
 			{
 				in_word = 1;
-				count++;				
+				count++;
 			}
 		}
 		else if (*s == c)
@@ -35,25 +36,79 @@ static int count_words(const char *s, char c)
 	return (count);
 }
 
+static char	*copy_word(const char *s, int start, char c)
+{
+	int		end;
+	int		word_len;
+	int		i;
+	char	*word;
 
-char **ft_split(char const *s, char c)
-{	
-	const int	word_count = count_words(s, c);
-	char		**words;
-
-	words = malloc((word_count + 1) * sizeof(char *));
-
-	words[0] = "ab";
-	words[1] = "bc";
-	words[2] = NULL;
-
-	printf("%s\n", words[0]);
-	printf("%s\n", words[1]);
-	printf("is NULL? %d\n", words[2] == NULL);
-
+	end = start;
+	while (s[end] != '\0' && s[end] != c)
+		end++;
+	word_len = end - start;
+	word = malloc((word_len + 1) * sizeof(char));
+	if (word == NULL)
+		return (NULL);
+	i = 0;
+	while (i < word_len)
+	{
+		word[i] = s[start + i];
+		i++;
+	}
+	word[word_len] = '\0';
+	return (word);
 }
 
-int main()
+static void	cleanup(char **all_words)
 {
-	ft_split("Hello World", ' ');
+	int	i;
+
+	i = 0;
+	while (all_words[i] != NULL)
+	{
+		free(all_words[i]);
+		i++;
+	}
+	free(all_words);
+}
+
+static int	initialize(char const *s, char c, char **all_words)
+{
+	int	start;
+	int	index;
+
+	start = 0;
+	index = 0;
+	while (s[start] != '\0')
+	{
+		while (s[start] == c)
+			start++;
+		if (s[start] == '\0')
+			break ;
+		all_words[index] = copy_word(s, start, c);
+		if (all_words[index] == NULL)
+			return (0);
+		index++;
+		while (s[start] != '\0' && s[start] != c)
+			start++;
+	}
+	all_words[index] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	const int	word_count = count_words(s, c);
+	char		**all_words;
+
+	all_words = malloc((word_count + 1) * sizeof(char *));
+	if (!all_words)
+		return (NULL);
+	if (initialize(s, c, all_words) == 0)
+	{
+		cleanup(all_words);
+		return (NULL);
+	}
+	return (all_words);
 }
