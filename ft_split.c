@@ -96,12 +96,26 @@ char **ft_split(char const *s, char c)
 		while (s[start] != '\0' && s[start] != c)
 			start++;
 	}
-	all_words[index] == '\0';
+	all_words[index] = NULL;
 	return all_words;
 }
 
 
 int main()
 {
-	ft_split("Hello World", ' ');
+	char **result = ft_split(" World", ' ');
+	if (result)
+	{
+		int i = 0;
+		
+		while (result[i] != NULL)
+		{
+			printf("%s\n", result[i]);
+			free(result[i]);
+			i++;
+		}
+		free(result);
+	}
+	return 0;
 }
+
