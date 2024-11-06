@@ -42,7 +42,6 @@ static char *copy_word(const char *s, int start, char c)
 	int i;
 
 	end = start;
-
 	while (s[end] != '\0' && s[end] != c)
 		end++;
 	word_len = end - start;
@@ -59,7 +58,6 @@ static char *copy_word(const char *s, int start, char c)
 	return word;
 }
 
-
 char **ft_split(char const *s, char c)
 {	
 	const int	word_count = count_words(s, c);
@@ -70,18 +68,14 @@ char **ft_split(char const *s, char c)
 	all_words = malloc((word_count + 1) * sizeof(char *));
 	if (!all_words)
 		return NULL;
-	
 	start = 0;
 	index = 0;
 	while (s[start] != '\0')
 	{
-		//skip delimiters
 		while (s[start] == c)
 			start++;
-		//if end of string, break the loop
 		if (s[start] == '\0')
 			break;
-		//copy each word
 		all_words[index] = copy_word(s, start, c);
 		if (all_words[index] == NULL)
 		{
@@ -90,16 +84,13 @@ char **ft_split(char const *s, char c)
             free(all_words);
             return NULL;
 		}
-		//If you just freed all_words without freeing each word first, you'd lose the pointers to those words, which //means they would be inaccessible and the memory would not be freed, leading to a memory leak.
 		index++;
-		//move start to the end
 		while (s[start] != '\0' && s[start] != c)
 			start++;
 	}
 	all_words[index] = NULL;
 	return all_words;
 }
-
 
 int main()
 {
