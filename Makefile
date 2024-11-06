@@ -35,6 +35,7 @@ SOURCES =	ft_atoi.c \
 			ft_strtrim.c \
 			ft_split.c \
 			ft_strmapi.c \
+			ft_striteri.c \
 			ft_toupper.c
 
 OBJS = $(SOURCES:%.c=%.o)
@@ -46,7 +47,7 @@ $(NAME): $(OBJS)
 	@ar crs $(NAME) $(OBJS)
 
 %.o: %.c
-	@echo "Now compiling $< to make $@" 
+	@echo "Now compiling $< to make $@"
 	$(CC) $(CFLAG) -c $< -o $@
 
 clean:
