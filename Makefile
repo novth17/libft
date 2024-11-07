@@ -37,7 +37,8 @@ SOURCES =	ft_atoi.c \
 			ft_strmapi.c \
 			ft_striteri.c \
 			ft_itoa.c \
-			ft_toupper.c
+			ft_toupper.c \
+			ft_lstnew.c
 
 OBJS = $(SOURCES:%.c=%.o)
 $(info "OBJS = $(OBJS)")
