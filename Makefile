@@ -36,7 +36,7 @@ SOURCES =	ft_atoi.c \
 			ft_split.c \
 			ft_strmapi.c \
 			ft_striteri.c \
-			ft_itoa \
+			ft_itoa.c \
 			ft_toupper.c
 
 OBJS = $(SOURCES:%.c=%.o)
