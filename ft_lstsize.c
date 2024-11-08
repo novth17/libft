@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/08 17:15:48 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/08 21:42:55 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list *current_node;
-	int	count;
+	t_list	*current_node;
+	int		count;
 
 	current_node = lst;
 	count = 0;
