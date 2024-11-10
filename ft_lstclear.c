@@ -39,15 +39,11 @@ int main ()
     t_list *node1 = ft_lstnew(ft_strdup("15"));
     t_list *node2 = ft_lstnew(ft_strdup("20"));
     t_list *node3 = ft_lstnew(ft_strdup("25"));
-
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;
-
 	ft_lstclear(&node1, del);
-
 	if (node1 == NULL)
 		printf("List cleared!\n");
-
 	return 0;
 }
