@@ -33,7 +33,6 @@ static void del(void *content)
 {
     free(content);
 }
-
 int main ()
 {
     // Dynamically allocate content for each node to ensure it can be freed
