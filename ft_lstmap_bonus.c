@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:49:03 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/11 18:28:14 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:33:57 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	create_and_add_node(t_list **new_list, void *(*f)(void *), void (*del)(void *), t_list *lst)
 {
-	void *content;
-	t_list *new_node;
+	void	*content;
+	t_list	*new_node;
 
 	content = f(lst->content);
 	if (content == NULL)
