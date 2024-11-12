@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:41:01 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/12 16:50:51 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:53:20 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	ft_strlcpy (substr, s + start, len + 1);
 	return (substr);
-}
-
-#include "libft.h"
-#include <stdio.h>
-
-int main ()
-{
-	char *p = "HELLOWORLD";
-
-	printf("%c\n", *(p + 4));
-	char *substr = ft_substr(p, 9, 5);
-
-	printf("%s\n", substr);
 }
