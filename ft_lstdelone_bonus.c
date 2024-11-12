@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 21:07:02 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/11 17:50:06 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:10:28 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	t_list	*temp;
+
 	if (!lst || !del)
 		return ;
 	if (lst != NULL)

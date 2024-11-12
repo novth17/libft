@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:49:47 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/11 17:51:04 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:16:51 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *temp;
+	t_list	*temp;
+
 	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
-	
 	while (*lst != NULL)
 	{
 		temp = (*lst)->next;

@@ -55,7 +55,7 @@ $(info "OBJS = $(OBJS)")
 OBJS_BONUS = $(SOURCES_BONUS:%.c=%.o)
 $(info "OBJS_BONUS = $(OBJS_BONUS)")
 
-BONUS_OBJS = 
+BONUS_OBJS =
 
 all: $(NAME)
 
