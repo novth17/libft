@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:41:01 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/12 16:53:20 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:58:46 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (ft_strdup(""));
-	// need to compare len and remaining part of string from start
 	if (len > s_len - start)
         len = s_len - start;
 	substr = malloc((s_len + 1) * sizeof(char));
