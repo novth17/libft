@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:41:01 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/12 19:33:13 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:36:14 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy (substr, s + start, (substr_length + 1));
 	return (substr);
 }
-
