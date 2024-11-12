@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:41:01 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/12 19:04:34 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:19:02 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 	size_t	substr_length;
 
-	if (len > SIZE_MAX)
+	if (len >= SIZE_MAX)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
