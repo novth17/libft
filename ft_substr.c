@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:41:01 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/12 16:30:45 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:50:51 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,25 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (ft_strdup(""));
+	// need to compare len and remaining part of string from start
+	if (len > s_len - start)
+        len = s_len - start;
 	substr = malloc((s_len + 1) * sizeof(char));
 	if (substr == NULL)
 		return (NULL);
 	ft_strlcpy (substr, s + start, len + 1);
 	return (substr);
+}
+
+#include "libft.h"
+#include <stdio.h>
+
+int main ()
+{
+	char *p = "HELLOWORLD";
+
+	printf("%c\n", *(p + 4));
+	char *substr = ft_substr(p, 9, 5);
+
+	printf("%s\n", substr);
 }
