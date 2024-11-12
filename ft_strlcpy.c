@@ -6,7 +6,7 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/03 11:04:41 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:17:29 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	i;
 
-	if (dst == NULL || src == NULL)
+	if (src == NULL)
 		return (0);
 	src_len = ft_strlen(src);
 	if (size == 0)
