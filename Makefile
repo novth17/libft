@@ -50,17 +50,15 @@ SOURCES_BONUS = ft_lstadd_back_bonus.c \
 				ft_lstsize_bonus.c
 
 OBJS = $(SOURCES:%.c=%.o)
-$(info "OBJS = $(OBJS)")
 
 OBJS_BONUS = $(SOURCES_BONUS:%.c=%.o)
-$(info "OBJS_BONUS = $(OBJS_BONUS)")
 
-BONUS_OBJS =
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
-	@ar crs $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME): $(OBJS)
+	@ar crs $(NAME) $(OBJS)
 	@echo "Library $(NAME) created successfully!"
 
 bonus: $(OBJS) $(OBJS_BONUS)
@@ -72,7 +70,7 @@ bonus: $(OBJS) $(OBJS_BONUS)
 	$(CC) $(CFLAG) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
+	@rm -f $(OBJS) $(OBJS_BONUS)
 	@echo "All object files removed."
 
 fclean: clean
