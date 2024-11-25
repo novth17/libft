@@ -6,11 +6,12 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/13 21:18:56 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:12:01 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -43,7 +44,8 @@ int main()
    const char *big = "HELLOWORLD";
    const char *little = "LOW";
 
-  printf("%s\n", ft_strnstr(big, little, 6));
+  	printf("%s\n", ft_strnstr(big, little, 6));
+    printf("%s\n", strnstr(big, little, 6));
 
 
 }

@@ -6,11 +6,13 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/13 22:19:57 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:09:04 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -46,55 +48,55 @@ int main() {
     size_t result1a = strlcpy(dest1a, src1a, sizeof(dest1a));
 
     printf("Test 1 - Result: %zu\n", result1);
-    printf("Test 1 - Destination: %s\n", dest1);  
+    printf("Test 1 - Destination: %s\n", dest1);
 	printf("Test 1 - Result: %zu\n", result1a);
-    printf("Test 1 - Destination: %s\n", dest1a);  
+    printf("Test 1 - Destination: %s\n", dest1a);
 
     // Test 2: Concatenation where destination buffer is full
     char dest2[10] = "Hello, ";
     char src2[] = "World!";
     size_t result2 = ft_strlcpy(dest2, src2, sizeof(dest2));
-    
-    printf("Test 2 - Result: %zu\n", result2);  
-    printf("Test 2 - Destination: %s\n", dest2);  
+
+    printf("Test 2 - Result: %zu\n", result2);
+    printf("Test 2 - Destination: %s\n", dest2);
 
 	char dest2a[10] = "Hello, ";
     char src2a[] = "World!";
     size_t result2a = strlcpy(dest2a, src2a, sizeof(dest2a));
-    
-    printf("Test 2 - Result: %zu\n", result2a); 
-    printf("Test 2 - Destination: %s\n", dest2a); 
+
+    printf("Test 2 - Result: %zu\n", result2a);
+    printf("Test 2 - Destination: %s\n", dest2a);
 
     // Test 3: Edge case where there is no space left in the destination
     char dest3[6] = "Hello";
     char src3[] = "World!";
     size_t result3 = ft_strlcpy(dest3, src3, sizeof(dest3));
-    
-    printf("Test 3 - Result: %zu\n", result3); 
-    printf("Test 3 - Destination: %s\n", dest3); 
+
+    printf("Test 3 - Result: %zu\n", result3);
+    printf("Test 3 - Destination: %s\n", dest3);
 
 	char dest3a[6] = "Hello";
     char src3a[] = "World!";
     size_t result3a = strlcpy(dest3a, src3a, sizeof(dest3a));
-    
-    printf("Test 3 - Result: %zu\n", result3a); 
-    printf("Test 3 - Destination: %s\n", dest3a); 
+
+    printf("Test 3 - Result: %zu\n", result3a);
+    printf("Test 3 - Destination: %s\n", dest3a);
 
 
     // Test 4: Concatenation where source is empty
     char dest4[20] = "Hello, ";
     char src4[] = "";
     size_t result4 = ft_strlcpy(dest4, src4, sizeof(dest4));
-    
-    printf("Test 4 - Result: %zu\n", result4); 
-    printf("Test 4 - Destination: %s\n", dest4); 
+
+    printf("Test 4 - Result: %zu\n", result4);
+    printf("Test 4 - Destination: %s\n", dest4);
 
 	char dest4a[20] = "Hello, ";
     char src4a[] = "";
     size_t result4a = strlcpy(dest4a, src4a, sizeof(dest4a));
-    
-    printf("Test 4 - Result: %zu\n", result4a); 
-    printf("Test 4 - Destination: %s\n", dest4a);  
+
+    printf("Test 4 - Result: %zu\n", result4a);
+    printf("Test 4 - Destination: %s\n", dest4a);
 
     return 0;
 }

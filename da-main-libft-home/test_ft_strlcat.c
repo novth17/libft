@@ -6,11 +6,13 @@
 /*   By: hiennguy <hiennguy@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:11:38 by hiennguy          #+#    #+#             */
-/*   Updated: 2024/11/13 22:17:39 by hiennguy         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:09:21 by hiennguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -54,14 +56,14 @@ int main() {
     char dest2[10] = "Hello, ";
     char src2[] = "World!";
     size_t result2 = ft_strlcat(dest2, src2, sizeof(dest2));
-    
+
     printf("Test 2 - Result: %zu\n", result2);  // Expected: Length of "Hello, World!"
     printf("Test 2 - Destination: %s\n", dest2);  // Expected: "Hello, Worl" (buffer overflow)
 
 	char dest2a[10] = "Hello, ";
     char src2a[] = "World!";
     size_t result2a = strlcat(dest2a, src2a, sizeof(dest2a));
-    
+
     printf("Test 2 - Result: %zu\n", result2a);  // Expected: Length of "Hello, World!"
     printf("Test 2 - Destination: %s\n", dest2a);  // Expected: "Hello, Worl" (buffer overflow)
 
@@ -69,14 +71,14 @@ int main() {
     char dest3[6] = "Hello";
     char src3[] = "World!";
     size_t result3 = ft_strlcat(dest3, src3, sizeof(dest3));
-    
+
     printf("Test 3 - Result: %zu\n", result3);  // Expected: Length of "HelloWorld"
     printf("Test 3 - Destination: %s\n", dest3);  // Expected: "Hello"
 
 	char dest3a[6] = "Hello";
     char src3a[] = "World!";
     size_t result3a = strlcat(dest3a, src3a, sizeof(dest3a));
-    
+
     printf("Test 3 - Result: %zu\n", result3a);  // Expected: Length of "HelloWorld"
     printf("Test 3 - Destination: %s\n", dest3a);  // Expected: "Hello"
 
@@ -85,14 +87,14 @@ int main() {
     char dest4[20] = "Hello, ";
     char src4[] = "";
     size_t result4 = ft_strlcat(dest4, src4, sizeof(dest4));
-    
+
     printf("Test 4 - Result: %zu\n", result4);  // Expected: Length of "Hello, "
     printf("Test 4 - Destination: %s\n", dest4);  // Expected: "Hello, "
 
 	char dest4a[20] = "Hello, ";
     char src4a[] = "";
     size_t result4a = strlcat(dest4a, src4a, sizeof(dest4a));
-    
+
     printf("Test 4 - Result: %zu\n", result4a);  // Expected: Length of "Hello, "
     printf("Test 4 - Destination: %s\n", dest4a);  // Expected: "Hello, "
 
